@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    
+    <title>Meme generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    
+<body class="bg-gray-600" >
+    <h1 class="text-white text-3xl" ></h1>
+    <div class="categories space-y-4 mt-10">
+        <div id="god" class="drop-zone bg-blue-300 p-3 flex flex-row space-x-3 overflow-auto">
+            <h2 class="text-xl font-bold">Decent </h2>
+        </div> 
+        
+        <div id="decent" class="drop-zone bg-yellow-300 p-3 flex flex-row space-x-3 overflow-auto">
+            <h2 class="text-xl font-bold">Average</h2>
+        </div> 
+        
+        <div id="average" class="drop-zone bg-red-300 p-3 flex flex-row space-x-3 overflow-auto">
+            <h2 class="text-xl font-bold">Trash</h2>
+        </div> 
+        
+        <div id="trash" class="drop-zone bg-gray-300 p-3 flex flex-row space-x-3 overflow-auto">
+            <h2 class="text-xl font-bold">Intolerable </h2>
+        </div> 
+        
+        <div id="intolerable" class="drop-zone bg-green-300 p-3 flex flex-row space-x-3 overflow-auto">
+            <h2 class="text-xl font-bold">test</h2>
+        </div> 
+        
+    </div>
+
+    <div class="images mt-10 grid grid-cols-4 gap-4 m-8">
+        <img src="./DSC_8365.JPG" width="200px " id="image1" alt="image1 " class="draggable" draggable="true" >
+        <img src="./DSC_8367.JPG" width="200px " id="image2" alt="image1 " class="draggable" draggable="true" >
+        <img src="./DSC_8368.JPG" width="200px " id="image3" alt="image1 " class="draggable" draggable="true" >
+        <img src="./DSC_8370.JPG" width="200px " id="image4" alt="image1 " class="draggable" draggable="true" >
+    </div>
+
+
+
+    <script>
+        document.querySelectorAll('.draggable').forEach( item => {
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text', e.target.id)
+            })
+        })
+         
+    </script>
 </body>
 </html>
